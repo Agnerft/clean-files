@@ -35,6 +35,11 @@ func ReadFile(linhas []string, fileSave string) ([]string, error) {
 }
 
 func ContainsOnlyNumbers(text string) bool {
-	reg := regexp.MustCompile("^[0-9]+$")
+	reg := regexp.MustCompile(`\d`)
 	return reg.MatchString(text)
+}
+
+func ContainsOnlyLetters(s string) bool {
+	reg := regexp.MustCompile("[a-zA-Z]")
+	return reg.MatchString(s)
 }
